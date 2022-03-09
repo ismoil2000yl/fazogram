@@ -1,0 +1,292 @@
+
+@media (min-width:0){
+  .sign-in{
+    width: 60%;
+    margin-left: 20%;
+    background-color: black;
+  }
+  section{
+    margin-top: 55%;
+  }
+  .sign-in-btn button{
+    margin-top: 1rem;
+  }
+  .App .row{
+    margin-left: 0;
+  }
+  .kirish{
+    width: 100%;
+    margin-left: 0;
+  }
+  .phone-enter{
+    margin-top: 5rem;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .saveBtnMenu{
+    width: 100%;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .saveBtnMenu button{
+    margin: 0.5rem 0.5rem 0.5rem 0;
+  }
+}
+
+@media (min-width:447px){
+  .sign-in{
+    width: 80%;
+    margin-left: 9%;
+    background-color: black;
+  }
+  section{
+    margin-top: 38%;
+  }
+  .phone-enter{
+    margin-top: 5rem;
+    width: 70%;
+    margin-left: 15%;
+  }
+}
+
+@media (min-width:769px) and (max-width:989.9px){
+  .sign-in{
+    width: 45%;
+    margin-left: 28%;
+    background-color: indigo;
+  }
+  section{
+    margin-top: 28%;
+  }
+  .phone-enter{
+    margin-top: 5rem;
+    width: 50%;
+    margin-left: 25%;
+  }
+  .saveBtnMenu{
+    width: 100%;
+    margin-top: 3rem;
+    display: block;
+  }
+  
+  .saveBtnMenu button{
+    margin: 0.5rem 0.5rem 0.5rem 0;
+    padding: 0.7rem 0;
+  }
+}
+
+@media (min-width:990px) and (max-width:1199.9px){
+  .sign-in{
+    width: 39%;
+    margin-left: 31%;
+    background-color: rgb(0, 183, 255);
+  }
+  section{
+    margin-top: 18%;
+  }
+  .phone-enter{
+    margin-top: 5rem;
+    width: 40%;
+    margin-left: 30%;
+  }
+  .saveBtnMenu{
+    width: 100%;
+    margin-top: 3rem;
+    display: block;
+  }
+  
+  .saveBtnMenu button{
+    margin: 0.5rem 0.5rem 0.5rem 0;
+    padding: 0.7rem 0;
+  }
+}
+
+@media (min-width:1200px){
+  .sign-in{
+    width: 430px;
+    margin-left: 34%;
+    background-color: rgb(0, 183, 255);
+  }
+  section{
+    margin-top: 18%;
+  }
+  .phone-enter{
+    margin-top: 5rem;
+    width: 40%;
+    margin-left: 30%;
+  }
+  .saveBtnMenu{
+    width: 100%;
+    margin-top: 3rem;
+    display: block;
+  }
+  
+  .saveBtnMenu button{
+    margin: 0.5rem 0.5rem 0.5rem 0;
+    padding: 0.7rem 0;
+  }
+}
+
+section{
+  width: 98%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-menu{
+  width: 420px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 55px;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+.text-menu .a{
+  color: green;
+}
+
+.text-menu div{
+  color: red;
+}
+
+.text-menu-div div:hover{
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+#f{
+  background-color: indigo;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 15px 25px 0px 25px;
+  font-size: 55px;
+  border: 5px solid red;
+}
+#f:hover{
+  transform: scale(1.1);
+}
+
+.App{
+  width: 95%;
+  height: 100vh;
+  background-color: aliceblue;
+  position:absolute;
+}
+
+.index{
+  width: 100%;
+  height: 100vh;
+  background-color: aliceblue;
+  position: relative;
+}
+
+.sign-in{
+  padding: 0.5rem;
+  margin-top: 2rem;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+  background-color: rgb(0, 183, 255);
+  border-radius: 10px;
+  border: 3px solid aliceblue;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.sign-in:hover{
+  opacity: 0.8;
+  border: 3px solid blue;
+}
+
+.sign-in:active{
+  transform: scale(0.9);
+}
+
+/* .phone-enter{
+  margin-top: 5rem;
+  width: 40%;
+  margin-left: 30%;
+} */
+
+label{
+  cursor: pointer;
+}
+
+.nameEnter{
+  margin-top: 5rem;
+}
+
+.kirish{
+  width: 50%;
+  margin-left: 25%;
+}
+
+.fazogram{
+  width: 100%;
+  height: 100vh;
+  background-color: indigo;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.phoneNumber{
+  width: 60%;
+  height: 70px;
+}
+
+.sign-in-btn{
+  width: 60%;
+}
+
+.sign-in-btn button{
+  width: 80%;
+  padding: 1rem 0;
+  margin-left: 43%;
+}
+
+.passwordClass{
+  width: 100%;
+  height: 100vh;
+  background-color:rgb(206, 227, 255);
+  position: absolute;
+}
+
+.passwordDiv{
+  margin-top: 40%;
+}
+
+.submitBtn{
+  padding: 1rem;
+  font-size: 22px;
+}
+
+.passwrodInputDiv{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 3rem;
+  position: relative;
+}
+
+.passwordIcon{
+  width: 45px;
+  height: 45px;
+}
+
+.See{
+  position: absolute;
+  width: 35px;
+  height: 30px;
+  cursor: pointer;
+  right: 1rem;
+}
+
+.See:active{
+  transform: scale(0.8);
+}
