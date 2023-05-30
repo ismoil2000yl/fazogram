@@ -1,0 +1,8 @@
+.container{
+    width: 100%;
+    max-width: $xxl;
+    margin: 0 auto;
+    &-lg{
+        max-width: $lg;
+    }
+}
