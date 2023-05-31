@@ -39,7 +39,6 @@ const index = () => {
   const registerHandler = (values, resetForm) => {
     axios.post('https://blogsiteuchun.pythonanywhere.com/user/register', values)
       .then((data) => {
-        console.log(data)
         dispatch(signIn(get(data, 'data.data')))
         navigate('/')
       })

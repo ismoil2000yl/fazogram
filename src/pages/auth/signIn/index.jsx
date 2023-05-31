@@ -35,10 +35,10 @@ const index = () => {
     },
     onSuccess: (data) => {
       console.log(data)
-      storage.set("token", get(data, "data.data.token"))
-      storage.set('userId', get(data, 'data.data.user.id'))
+      storage.set("token", get(data, "data.token"))
+      // storage.set('userId', get(data, 'data.user.id'))
       navigate("/");
-      dispatch(signIn(get(data, "data.data")));
+      dispatch(signIn(get(data, "data")));
     },
   });
 
