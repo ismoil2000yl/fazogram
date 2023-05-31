@@ -29,11 +29,12 @@ const index = () => {
   const mutation = useMutation({
     mutationFn: (newTodo) => {
       return axios.post(
-        "https://blogsiteuchun.pythonanywhere.com/login",
+        "https://blogsiteuchun.pythonanywhere.com/user/login",
         newTodo
       );
     },
     onSuccess: (data) => {
+      console.log(data)
       storage.set("token", get(data, "data.data.token"))
       storage.set('userId', get(data, 'data.data.user.id'))
       navigate("/");

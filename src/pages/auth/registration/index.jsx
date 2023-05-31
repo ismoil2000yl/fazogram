@@ -8,6 +8,7 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { get } from 'lodash'
 import { useNavigate } from "react-router-dom";
+import * as Yup from 'yup';
 const { VITE_API_ROOT } = import.meta.env;
 
 
@@ -17,8 +18,26 @@ const index = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
+  const validate = Yup.object({
+    username: Yup.string()
+      // .max(15, 'Xarflar soni 15 dan oshmasin...!')
+      .required("Username kiritilmagan...!"),
+    password: Yup.string()
+      // .min(6, "Parol uzunligi 6 ta dan ko'p bo'lsin...!")
+      .required("Parol kiritilmagan...!"),
+    first_name: Yup.string()
+      // .min(6, "Parol uzunligi 6 ta dan ko'p bo'lsin...!")
+      .required("Parol kiritilmagan...!"),
+    last_name: Yup.string()
+      // .min(6, "Parol uzunligi 6 ta dan ko'p bo'lsin...!")
+      .required("Parol kiritilmagan...!"),
+    phone_number: Yup.string()
+      // .min(6, "Parol uzunligi 6 ta dan ko'p bo'lsin...!")
+      .required("Parol kiritilmagan...!"),
+  })
+
   const registerHandler = (values, resetForm) => {
-    axios.post('https://blogsiteuchun.pythonanywhere.com/register', values)
+    axios.post('https://blogsiteuchun.pythonanywhere.com/user/register', values)
       .then((data) => {
         console.log(data)
         dispatch(signIn(get(data, 'data.data')))
@@ -42,6 +61,7 @@ const index = () => {
           onSubmit={(data) => {
             // signIn(data);
           }}
+          validationSchema={validate}
         >
           {({ values, resetForm }) => {
             return (
@@ -69,6 +89,7 @@ const index = () => {
                   name="phone_number"
                   label="Phone number"
                   component={Fields.Input}
+                  type="number"
                 />
                 <Field
                   name="password"
