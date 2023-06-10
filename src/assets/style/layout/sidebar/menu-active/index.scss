@@ -1,0 +1,67 @@
+.menu-active {
+    width: 100%;
+    height: 90%;
+    // padding: .5rem 1rem;
+    // background-color: white;
+    // border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .my-profile {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        padding: .5rem 1rem;
+        border-radius: 12px;
+
+        &-info {
+            display: flex;
+            gap: 10px;
+
+            &-img {
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            &-box {
+                display: flex;
+                flex-direction: column;
+                gap: 3px;
+                align-items: center;
+                margin-top: 5px;
+
+                &-name {
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+
+                &-surname {
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        &-settings {
+            width: 40px;
+            height: 40px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 12px;
+            }
+        }
+    }
+}

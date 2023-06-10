@@ -3,7 +3,7 @@ import React from 'react'
 import { SignUserAvatar } from 'assets/images/png'
 import { signIn } from 'store/auth'
 import { Fields } from 'components'
-import { Button } from 'antd'
+import { Button, notification } from 'antd'
 import * as Yup from 'yup';
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from 'react-router-dom'
@@ -15,6 +15,7 @@ import storage from 'services/storage'
 const index = () => {
   const selector = useSelector((state) => state);
   const navigate = useNavigate()
+  const [api, contextHolder] = notification.useNotification();
   const dispatch = useDispatch()
 
   const validate = Yup.object({
@@ -53,11 +54,17 @@ const index = () => {
           onSubmit={(data) => {
             signIn(data)
           }}
+          onError={()=>{
+            notification.error({
+              message: "Login yoki parol noto'g'ri",
+            });
+          }}
           validationSchema={validate}
         >
           {({ values, setFieldValue }) => {
             return (
               <Form>
+                {contextHolder}
                 <div className='text-center'>
                   <img src={SignUserAvatar} className="sign-user-avatar" />
                   <h3 className='my-2'>Login</h3>

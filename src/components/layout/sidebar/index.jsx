@@ -1,26 +1,30 @@
 import React from "react";
-import menus from "./menus";
-import { Layout, Menu } from "antd";
-import { useLocation, useNavigate } from "react-router-dom";
+import { IconMenu, IconSecurity } from "assets/images/png";
+import MenuActive from './menu-active'
+import { useState } from "react";
 
-const { Sider } = Layout;
 
 const sidebar = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
+
+  const [menuActive, setMenuActive] = useState(false)
 
   return (
-    <Sider>
-      <Menu
-        mode="inline"
-        theme="dark"
-        className="h-full"
-        defaultSelectedKeys={[location.pathname.replace("/", "")]}
-        defaultOpenKeys={[location.pathname.split("/")[1]]}
-        onClick={(item) => navigate(`/${item.key}`)}
-        items={menus}
-      />
-    </Sider>
+    <div className="sidebar">
+      <div className="menu-box">
+        <button className="menu-box__menu menu-box-icon" onClick={() => setMenuActive(!menuActive)}>
+          <img src={IconMenu} alt="" />
+        </button>
+        <input type="text" placeholder="Search" className="menu-box-input" />
+        <button className="menu-box__security menu-box-icon">
+          <img src={IconSecurity} alt="" />
+        </button>
+      </div>
+      <div className="menu-active-div">
+        {
+          menuActive ? <MenuActive /> : null
+        }
+      </div>
+    </div>
   );
 };
 

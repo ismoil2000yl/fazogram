@@ -3,16 +3,16 @@ import config from "config";
 import storage from "services/storage";
 
 const api = axios.create({
-  baseURL: "https://api.horunxon.uz/api/v1/admin",
+  baseURL: "https://blogsiteuchun.pythonanywhere.com/user",
   timeout: 3000,
 });
 
 api.defaults.params = {};
-api.defaults.params["_f"] = "json";
+// api.defaults.params["_f"] = "json";
 api.defaults.headers.common["Accept"] = "application/json";
 api.defaults.headers.common["Cache-Control"] = "no-cache";
 api.defaults.headers.common["Content-Type"] = "application/json; charset=utf-8";
-api.defaults.params['author_id'] = storage.get('userId')
+// api.defaults.params['author_id'] = storage.get('userId')
 
 api.interceptors.request.use(
   (configs) => {
