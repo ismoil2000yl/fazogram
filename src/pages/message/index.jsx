@@ -6,6 +6,8 @@ import { IconUserAvatar, IconFile, IconSend } from 'assets/images/png'
 import { Upload } from 'antd'
 import { useMutation } from '@tanstack/react-query'
 import axios from 'axios'
+import MessageBody from 'pages/message/message-body'
+
 
 const index = () => {
 
@@ -15,8 +17,6 @@ const index = () => {
     const [seenUser, setSeenUser] = useState(false)
     const [imageModal, setImageModal] = useState(false)
     const [values, setValues] = useState({ content: '' })
-
-    console.log(values)
 
     useEffect(() => {
         fetch(`https://blogsiteuchun.pythonanywhere.com/user/profile/${username}`)
@@ -50,7 +50,7 @@ const index = () => {
                 </div>
             </div>
             <div className="message-body">
-
+                <MessageBody accaunt={accaunt}/>
             </div>
             <div className="message-footer">
                 <div className="message-footer-item">
