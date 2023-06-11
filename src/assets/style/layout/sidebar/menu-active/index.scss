@@ -1,12 +1,10 @@
 .menu-active {
     width: 100%;
-    height: 90%;
-    // padding: .5rem 1rem;
-    // background-color: white;
-    // border-radius: 12px;
+    height: 81vh;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    overflow-y: scroll;
 
     .my-profile {
         width: 100%;

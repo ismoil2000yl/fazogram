@@ -10,7 +10,7 @@ const all = ({url, params, queryKey, onSuccess, onError, children}) => {
         onSuccess,
         onError
     })
-
+console.log(data)
   return children({
     items: get(data, "data.data.data"),
     meta:{

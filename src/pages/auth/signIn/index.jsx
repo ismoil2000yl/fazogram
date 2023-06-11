@@ -11,12 +11,15 @@ import { useMutation } from '@tanstack/react-query'
 import axios from 'axios'
 import { get } from 'lodash'
 import storage from 'services/storage'
+import { useState } from 'react'
 
 const index = () => {
   const selector = useSelector((state) => state);
   const navigate = useNavigate()
   const [api, contextHolder] = notification.useNotification();
   const dispatch = useDispatch()
+
+  const [username, setUsername] = useState("");
 
   const validate = Yup.object({
     username: Yup.string()
@@ -35,7 +38,7 @@ const index = () => {
       );
     },
     onSuccess: (data) => {
-      console.log(data)
+      storage.set("username", username)
       storage.set("token", get(data, "data.token"))
       // storage.set('userId', get(data, 'data.user.id'))
       navigate("/");
@@ -62,6 +65,7 @@ const index = () => {
           validationSchema={validate}
         >
           {({ values, setFieldValue }) => {
+            setUsername(values.username)
             return (
               <Form>
                 {contextHolder}

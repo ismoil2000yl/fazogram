@@ -1,36 +1,37 @@
 import React from 'react'
-import ContainerAll from 'moduls/container/all'
-import ImageUser from 'assets/images/jpg/Ismoil.jpg'
-import { IconMessage } from 'assets/images/png'
+import { IconMessage, IconUserAvatar } from 'assets/images/png'
+import { Badge } from 'antd'
+import { useNavigate } from 'react-router-dom'
 
-const index = () => {
+const index = ({data}) => {
+
+    const navigate = useNavigate()
+
     return (
-        <ContainerAll
-            url={"/list"}
-            queryKey={["list"]}
-        >
-            {
-                ({ items }) => {
-                    console.log(items)
-                    return (
-                        <div className="my-profile">
-                            <div className="my-profile-info">
-                                <div className="my-profile-info-img">
-                                    <img src={ImageUser} alt="" />
-                                </div>
-                                <div className="my-profile-info-box">
-                                    <h4 className="my-profile-info-box-name">Ismoiljon</h4>
-                                    <h4 className="my-profile-info-box-surname">Jalolov</h4>
-                                </div>
-                            </div>
-                            <button className='my-profile-settings'>
-                                <img src={IconMessage} alt="" />
-                            </button>
+        data.map((item, index) => {
+            return (
+                <div className="my-profile" key={index}>
+                    <div className="my-profile-info">
+                        <div className="my-profile-info-img">
+                            <img src={item?.photo ? item.photo : IconUserAvatar} alt="" />
                         </div>
-                    )
-                }
-            }
-        </ContainerAll>
+                        <div className="my-profile-info-box">
+                            <h4 className="my-profile-info-box-name">{item?.first_name}</h4>
+                            <h4 className="my-profile-info-box-surname">{item?.last_name}</h4>
+                        </div>
+                    </div>
+                    <Badge
+                        count={0}
+                        showZero
+                    >
+                        <button className='my-profile-settings' onClick={()=>navigate(`/chats/${item.id}/send-message`)}>
+                            <img src={IconMessage} alt="" />
+                        </button>
+                    </Badge>
+                </div>
+            )
+        })
+
     )
 }
 

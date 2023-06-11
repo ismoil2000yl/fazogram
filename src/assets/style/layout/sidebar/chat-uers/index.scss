@@ -1,0 +1,24 @@
+.chats-users {
+    // border: 1px solid red;
+    padding-top: 5px;
+
+    &-btn-group {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        &-item {
+            padding: 10px 15px;
+            border: 1px solid #E0FFFF;
+            transition: all .3s ease-in-out;
+
+            &:hover {
+                color: green;
+                background-color: white;
+                border-radius: 12px;
+            }
+        }
+    }
+
+
+}
