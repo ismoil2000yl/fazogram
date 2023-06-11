@@ -36,7 +36,7 @@ const privateRoutes = [
     children: [{}],
   },
   {
-    path: "/chats/:id/send-message",
+    path: "/chats/:username/send-message",
     element: <Message />,
     children: [{}],
   },

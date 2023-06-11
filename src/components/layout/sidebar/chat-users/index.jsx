@@ -6,12 +6,14 @@ import { UserSettings, MyUserAvatar } from 'assets/images/png'
 import List from 'components/list'
 import storage from 'services/storage'
 import { useNavigate } from 'react-router-dom'
+import ImageModal from 'components/image-modal'
 
 const index = () => {
 
     const navigate = useNavigate()
 
     const [myAccount, setMyAccount] = useState([])
+    const [imageModal, setImageModal] = useState(false)
 
     useEffect(() => {
         fetch(`https://blogsiteuchun.pythonanywhere.com/user/profile/${storage.get("username")}`)
@@ -61,7 +63,11 @@ const index = () => {
                 <div className="my-profile">
                     <div className="my-profile-info">
                         <div className="my-profile-info-img">
-                            <img src={myAccount?.photo ? myAccount.photo : MyUserAvatar} alt="" />
+                            <img 
+                                src={myAccount?.photo ? myAccount.photo : MyUserAvatar} 
+                                alt="" 
+                                onClick={() => setImageModal(true)}
+                            />
                         </div>
                         <div className="my-profile-info-box">
                             <h4 className="my-profile-info-box-name">{myAccount?.first_name}</h4>
@@ -74,6 +80,12 @@ const index = () => {
                 </div>
                 <List data={data} />
             </div>
+            <ImageModal
+                accaunt={myAccount}
+                openModal={imageModal}
+                setOpenModal={setImageModal}
+                avatar={MyUserAvatar}
+            />
         </div>
     )
 }
