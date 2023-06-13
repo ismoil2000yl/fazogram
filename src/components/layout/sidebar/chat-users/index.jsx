@@ -56,7 +56,7 @@ const index = () => {
                         backgroundColor: '#52c41a',
                     }}
                 >
-                    <button className='chats-users-btn-group-item'>Request</button>
+                    <button onClick={()=>navigate("/requests")} className='chats-users-btn-group-item'>Request</button>
                 </Badge>
             </div>
             <div className='menu-active'>
@@ -81,7 +81,7 @@ const index = () => {
                 <List data={data} />
             </div>
             <ImageModal
-                accaunt={myAccount}
+                accaunt={myAccount.photo}
                 openModal={imageModal}
                 setOpenModal={setImageModal}
                 avatar={MyUserAvatar}

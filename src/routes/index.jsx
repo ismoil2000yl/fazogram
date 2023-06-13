@@ -6,6 +6,7 @@ const Start = lazy(() => import("pages/start"));
 const SignIn = lazy(()=> import("pages/auth/signIn"))
 const Settings = lazy(()=> import("pages/settings"))
 const Message = lazy(()=> import("pages/message"))
+const Requests = lazy(()=> import("pages/requests"))
 
 // import Settings from 'pages/settings'
 
@@ -38,6 +39,11 @@ const privateRoutes = [
   {
     path: "/chats/:username/send-message",
     element: <Message />,
+    children: [{}],
+  },
+  {
+    path: "/requests",
+    element: <Requests />,
     children: [{}],
   },
 ];

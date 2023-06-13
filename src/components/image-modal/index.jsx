@@ -3,8 +3,6 @@ import { Modal } from 'antd';
 
 const index = ({ accaunt, openModal, setOpenModal, avatar }) => {
 
-
-
     return (
         <>
             <Modal
@@ -15,7 +13,7 @@ const index = ({ accaunt, openModal, setOpenModal, avatar }) => {
             >
                 <div className='image-modal'>
                     <img
-                        src={accaunt?.photo ? accaunt.photo : avatar}
+                        src={accaunt? accaunt : avatar}
                         alt=""
                         className='image-modal-img'
                     />

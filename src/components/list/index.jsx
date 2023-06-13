@@ -8,6 +8,12 @@ const index = ({ data }) => {
 
     const navigate = useNavigate()
     const [imageModal, setImageModal] = useState(false)
+    const [imageData, setImageData] = useState(null)
+
+    const seenImgFunc = (item) => {
+        setImageModal(true)
+        setImageData(item.photo)
+    }
 
     return (
         <>
@@ -16,10 +22,10 @@ const index = ({ data }) => {
                     <div className="my-profile" key={item.id}>
                         <div className="my-profile-info">
                             <div className="my-profile-info-img">
-                                <img 
-                                    src={item?.photo ? item.photo : IconUserAvatar} 
-                                    alt="" 
-                                    onClick={() => setImageModal(true)}
+                                <img
+                                    src={item?.photo ? item.photo : IconUserAvatar}
+                                    alt=""
+                                    onClick={() => seenImgFunc(item)}
                                 />
                             </div>
                             <div className="my-profile-info-box">
@@ -36,7 +42,7 @@ const index = ({ data }) => {
                             </button>
                         </Badge>
                         <ImageModal
-                            accaunt={item}
+                            accaunt={imageData}
                             openModal={imageModal}
                             setOpenModal={setImageModal}
                             avatar={IconUserAvatar}
