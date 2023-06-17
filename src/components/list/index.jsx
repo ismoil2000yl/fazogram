@@ -4,7 +4,7 @@ import { Badge } from 'antd'
 import { useNavigate } from 'react-router-dom'
 import ImageModal from 'components/image-modal'
 
-const index = ({ data }) => {
+const index = ({ data, value }) => {
 
     const navigate = useNavigate()
     const [imageModal, setImageModal] = useState(false)
@@ -17,7 +17,7 @@ const index = ({ data }) => {
 
     return (
         <>
-            {data.map((item) => {
+            {data.filter(item=>item.username.toLowerCase().includes(value.toLowerCase())).map((item) => {
                 return (
                     <div className="my-profile" key={item.id}>
                         <div className="my-profile-info">
@@ -28,7 +28,7 @@ const index = ({ data }) => {
                                     onClick={() => seenImgFunc(item)}
                                 />
                             </div>
-                            <div className="my-profile-info-box">
+                            <div className="my-profile-info-box" onClick={()=> navigate(`/media/${item.username}`)}>
                                 <h4 className="my-profile-info-box-name">{item?.first_name}</h4>
                                 <h4 className="my-profile-info-box-surname">{item?.last_name}</h4>
                             </div>

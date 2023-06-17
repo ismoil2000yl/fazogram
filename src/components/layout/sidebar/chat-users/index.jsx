@@ -8,7 +8,7 @@ import storage from 'services/storage'
 import { useNavigate } from 'react-router-dom'
 import ImageModal from 'components/image-modal'
 
-const index = () => {
+const index = ({value}) => {
 
     const navigate = useNavigate()
 
@@ -69,7 +69,7 @@ const index = () => {
                                 onClick={() => setImageModal(true)}
                             />
                         </div>
-                        <div className="my-profile-info-box">
+                        <div className="my-profile-info-box" >
                             <h4 className="my-profile-info-box-name">{myAccount?.first_name}</h4>
                             <h4 className="my-profile-info-box-surname">{myAccount?.last_name}</h4>
                         </div>
@@ -78,7 +78,7 @@ const index = () => {
                         <img src={UserSettings} alt="" />
                     </button>
                 </div>
-                <List data={data} />
+                <List value={value} data={data} />
             </div>
             <ImageModal
                 accaunt={myAccount.photo}

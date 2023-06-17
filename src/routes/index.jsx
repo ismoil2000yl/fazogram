@@ -7,6 +7,7 @@ const SignIn = lazy(()=> import("pages/auth/signIn"))
 const Settings = lazy(()=> import("pages/settings"))
 const Message = lazy(()=> import("pages/message"))
 const Requests = lazy(()=> import("pages/requests"))
+const Media = lazy(()=> import("pages/media"))
 
 // import Settings from 'pages/settings'
 
@@ -44,6 +45,11 @@ const privateRoutes = [
   {
     path: "/requests",
     element: <Requests />,
+    children: [{}],
+  },
+  {
+    path: "/media/:username",
+    element: <Media />,
     children: [{}],
   },
 ];

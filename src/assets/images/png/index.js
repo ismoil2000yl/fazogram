@@ -16,9 +16,14 @@ import IconUsername from './username.png'
 import IconHome from './home.png'
 import IconFile from './file.png'
 import IconSend from './send.png'
+import IconAccauntImage from './accaunt-image.png'
+import IconSendMessage from './send-message.png'
+import IconLike from './like.png'
+import IconComment from './comment.png'
 
 export {
   SignUserAvatar, IconMenu, IconSecurity, IconSettings, UserSettings, IconMessage,
   IconUserAvatar, MyUserAvatar, IconEdit, IconDelete, IconLogOut, IconPassword,
-  IconPhone, IconUsername, IconHome, IconFile, IconSend
+  IconPhone, IconUsername, IconHome, IconFile, IconSend, IconAccauntImage,IconSendMessage,
+  IconLike, IconComment
 }
